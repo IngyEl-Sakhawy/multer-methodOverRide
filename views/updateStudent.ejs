@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add student</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    nav {
+      background-color: #333;
+      overflow: hidden;
+    }
+    nav a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    form {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+    }
+    form label, form input {
+      display: block;
+      margin-bottom: 10px;
+    }
+    form input[type="submit"] {
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+    form input[type="submit"]:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/">Back to List</a>
+</nav>
+
+<h2>Update Student</h2>
+
+<form action="/<%= student._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="<%= student.name %>">
+  
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" value="<%= student.email %>">
+  
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" value="<%= student.phone %>">
+  
+    <label for="birthdate">Birthdate:</label>
+    <input type="date" id="birthdate" name="birthdate" value="<%= student.birthdate %>">
+  
+    <label for="profile_picture">Profile Picture:</label>
+    <input type="file" id="profile_picture" name="profile_picture" value="<%= student.profile_picture %>">
+  
+    <input type="submit" value="Update Student">
+  </form>
+
+</body>
+</html>
